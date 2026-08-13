@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+
+    <style>
+        body {
+            position: relative;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            background: #f4f6f8;
+        }
+
+        .dashboard {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .message-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .message-card h3 {
+            margin: 0 0 8px;
+        }
+
+        .message-card p {
+            margin: 6px 0;
+        }
+
+        .message {
+            margin-top: 15px;
+            padding: 12px;
+            background: #f1f3f5;
+            border-radius: 6px;
+        }
+
+        .date {
+            font-size: 13px;
+            color: #777;
+        }
+
+        #status {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .user-card {
+    background: white;
+    padding: 18px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.user-card h3 {
+    margin: 0 0 8px;
+}
+
+.user-date {
+    font-size: 13px;
+    color: #777;
+}
+#logoutBtn {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+    </style>
+</head>
+
+<body>
+<div class="dashboard">
+    <button id="logoutbyn">Logout</button>
+    <h2>👥 Registered Users</h2>
+<p id="userStatus">Loading users...</p>
+<div id="users"></div>
+<hr>
+    <h1>📩 Contact Messages</h1>
+    <p id="status">Loading messages...</p>
+    <div id="messages"></div>
+</div>
+<script>
+    // Admin login check
+    if (localStorage.getItem("adminLoggedIn") !== "true") {
+        window.location.href = "admin-login.html";
+    }
+fetch("http://localhost:3000/api/contact")
+    .then(response => {
+        console.log("Response status:", response.status);
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch messages");
+        }
+
+        return response.json();
+    })
+    .then(messages => {
+
+        console.log("Messages received:", messages);
+
+        const container = document.getElementById("messages");
+        const status = document.getElementById("status");
+
+        container.innerHTML = "";
+
+        status.textContent =
+            messages.length + " message(s) found";
+
+        messages.forEach(message => {
+
+            const card = document.createElement("div");
+
+            card.className = "message-card";
+
+            card.innerHTML = `
+                <h3>${message.name}</h3>
+
+                <p>
+                    <strong>Email:</strong>
+                    ${message.email}
+                </p>
+
+                <div class="message">
+                    ${message.message}
+                </div>
+
+                <p class="date">
+                    ${message.created_at || ""}
+                </p>
+            `;
+
+            container.appendChild(card);
+        });
+
+    })
+    .catch(error => {
+
+        console.error("Contact messages error:", error);
+
+        document.getElementById("status").textContent =
+            "Unable to load messages.";
+
+    });
+fetch("http://localhost:3000/api/auth/users")
+    .then(response => {
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch users");
+        }
+
+        return response.json();
+
+    })
+    .then(users => {
+
+        const container = document.getElementById("users");
+        const status = document.getElementById("userStatus");
+
+        container.innerHTML = "";
+
+        status.textContent =
+            users.length + " registered user(s) found";
+
+        users.forEach(user => {
+
+            const card = document.createElement("div");
+
+            card.className = "user-card";
+
+            card.innerHTML = `
+                <h3>${user.name}</h3>
+
+                <p>
+                    <strong>Email:</strong>
+                    ${user.email}
+                </p>
+
+                <p class="user-date">
+                    Registered: ${user.created_at || ""}
+                </p>
+            `;
+
+            container.appendChild(card);
+
+        });
+
+    })
+    .catch(error => {
+
+        console.error("Users error:", error);
+
+        document.getElementById("userStatus").textContent =
+            "Unable to load users.";
+
+    });
+
+</script>
+
+</body>
+</html>

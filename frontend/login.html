@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Saksham Kumar</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+        }
+
+        .login-container {
+            width: 380px;
+            padding: 40px 35px;
+            background: #151b2e;
+            border-radius: 18px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+            text-align: center;
+        }
+
+        .login-container h1 {
+            color: white;
+            margin: 0 0 10px;
+            font-size: 30px;
+        }
+
+        .subtitle {
+            color: #00bfff;
+            margin: 0 0 28px;
+            font-size: 14px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 14px;
+            margin: 8px 0;
+            border: 1px solid #2d3855;
+            border-radius: 8px;
+            outline: none;
+            background: #0f1526;
+            color: white;
+            font-size: 14px;
+        }
+
+        .login-container input::placeholder {
+            color: #9aa4b8;
+        }
+
+        .login-container input:focus {
+            border-color: #00bfff;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 18px;
+            border: none;
+            border-radius: 8px;
+            background: #00bfff;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background: #009acd;
+        }
+
+        .register-link {
+            color: #aaa;
+            margin-top: 24px;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #00bfff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <h1>Welcome Back 👋</h1>
+
+        <p class="subtitle">
+            Login to explore my portfolio and projects
+        </p>
+
+        <form id="loginForm">
+
+            <input
+                type="email"
+                required
+                placeholder="Email Address"
+                name="email"
+            >
+
+            <input
+                type="password"
+                required
+                placeholder="Password"
+                name="password"
+            >
+
+            <button type="submit">Login</button>
+
+        </form>
+
+        <p class="register-link">
+            Don't have an account?
+            <a href="register.html">Create Account</a>
+        </p>
+
+    </div>
+
+    <script>
+
+        document.getElementById("loginForm").addEventListener("submit", async function(e) {
+
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            const data = {
+                email: formData.get("email"),
+                password: formData.get("password")
+            };
+
+            try {
+
+                const response = await fetch(
+                    "http://localhost:3000/api/auth/login",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify(data)
+                    }
+                );
+
+                const result = await response.text();
+
+                if (response.ok) {
+
+                    alert(result);
+
+                    localStorage.setItem("isLoggedIn", "true");
+                    localStorage.setItem("userEmail", data.email);
+
+                    window.location.href = "index.html";
+
+                } else {
+
+                    alert(result);
+
+                }
+
+            } catch (error) {
+
+                console.error("Login error:", error);
+
+                alert("Backend se connection nahi ho raha!");
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
