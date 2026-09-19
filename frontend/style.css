@@ -504,81 +504,141 @@ footer {
             repeat(2, 1fr);
     }
 }
-/* MOBILE */
+/* MOBILE RESPONSIVE DESIGN */
 @media (max-width: 600px) {
+    /* NAVBAR */
     header {
-        padding: 18px 15px;
+        padding: 15px 12px;
+    }
+    nav {
+        flex-direction: column;
+        gap: 15px;
     }
     nav h2 {
-        font-size: 25px;
+        font-size: 24px;
+        text-align: center;
     }
     nav ul {
-        flex-direction: column;
-        gap: 12px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 15px;
     }
+    nav ul li a {
+        font-size: 13px;
+    }
+    nav ul li button {
+        padding: 7px 15px;
+        font-size: 13px;
+    }
+    /* USER INFO */
+    #userinfo {
+        margin: 15px 10px;
+    }
+    #userinfo h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    #userinfo p {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+    /* HERO */
     #introduce {
-        min-height: 600px;
-        padding: 70px 20px;
-    }
-    #introduce::before {
-        font-size: 25px;
-        margin-bottom: 35px;
+        min-height: auto;
+        padding: 50px 18px;
     }
     #introduce h1 {
-        font-size: 35px;
+        font-size: clamp(28px, 8vw, 38px);
+        line-height: 1.3;
     }
     #introduce h2 {
-        font-size: 19px;
-        line-height: 1.6;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 18px;
     }
     #introduce p {
         font-size: 15px;
+        line-height: 1.7;
     }
+    /* SOCIAL BUTTONS */
     .social-buttons {
         flex-direction: column;
+        gap: 12px;
         width: 100%;
+        margin-top: 22px;
     }
     .social-btn {
         width: 190px;
+        max-width: 100%;
     }
+    /* RESUME BUTTON */
+    .resume-btn {
+        margin-top: 20px;
+        padding: 11px 22px;
+        font-size: 15px;
+        max-width: 100%;
+    }
+    /* ALL SECTIONS */
     #about,
     #skills,
     #projects,
     #education,
     #certificates,
     #contact {
-        padding: 65px 5%;
+        padding: 55px 5%;
     }
+    /* SECTION HEADINGS */
     .section-title,
     #skills h2,
     #projects h2,
     #certificates h2,
     .education-title,
     #about h2 {
-        font-size: 32px;
+        font-size: 30px;
+        margin-bottom: 30px;
     }
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
+    /* CARDS */
+    .skills-container,
+    .projects-container,
     .certificate-container {
         grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .skill-card,
+    .project-card,
+    .certificate-card {
+        padding: 24px 18px;
+        width: 100%;
+    }
+    /* EDUCATION */
+    .education-card {
+        width: 100%;
+        padding: 22px 16px;
+    }
+    .education-card h3 {
+        font-size: 21px;
+    }
+    .education-card p {
+        font-size: 15px;
+        overflow-wrap: anywhere;
+    }
+    /* CONTACT */
+    .contact-card {
+        padding: 22px 16px;
     }
     .contact-row {
         flex-direction: column;
         gap: 0;
     }
-    .education-card {
-        width: 100%;
-        padding: 25px;
+    .form-group input,
+    .form-group textarea {
+        font-size: 15px;
     }
-    .education-card h3 {
-        font-size: 23px;
-    }
-    .education-card p {
-        font-size: 16px;
+    /* FOOTER */
+    footer {
+        padding: 20px 12px;
+        font-size: 13px;
     }
 }
 /* RESUME BUTTON */
