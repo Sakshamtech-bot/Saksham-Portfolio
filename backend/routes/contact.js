@@ -42,7 +42,6 @@ router.get("/", (req, res) => {
             console.log("Fetch messages error:", err);
             return res.status(500).send("Failed to fetch messages!");
         }
-
         res.json(results);
     });
 });
