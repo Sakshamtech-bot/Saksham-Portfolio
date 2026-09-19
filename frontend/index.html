@@ -1,165 +1,263 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saksham Kumar | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!--NAVBAR-->
 <header>
-    <nav>
-        <h2>Saksham Kumar</h2>
-        <ul>
+    <nav class="navbar">
+        <h2 class="logo">
+            Saksham <span>Kumar</span>
+        </h2>
+        <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Project</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#certificates">Certificate</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><button id="logoutBtn">Logout</button></li>
+            <li>
+                <button id="logoutBtn" class="logout-btn">
+                    Logout
+                </button>
+            </li>
         </ul>
     </nav>
 </header>
+<!-- USER INFO -->
 <div id="userinfo">
     <h2>Welcome</h2>
     <p id="userName"></p>
     <p id="userEmail"></p>
 </div>
-<section id="introduce">
-    <h1>Hello, I'm Saksham Kumar</h1>
-    <h2>B.Tech CSE student 
-        | Java | Python | Full Stack Development</h2>
-        <p>
-            passion about programming, web Development, and learning new technologies.
-            Currently building real-world Project to improve my Development Skills.
+<!-- HERO SECTION -->
+<section id="introduce" class="hero">
+    <div class="hero-content">
+        <h1>
+            Hello, I'm <span>Saksham Kumar</span>
+        </h1>
+        <h2>
+            B.Tech CSE Student
+            <span>|</span>
+            Java
+            <span>|</span>
+            Python
+            <span>|</span>
+            Full Stack Development
+        </h2>
+        <p class="hero-description">
+            Passionate about programming, web development,
+            and learning new technologies. Currently building
+            real-world projects to improve my development skills.
         </p>
-        <a href="saksham resume.pdf" download>
-        <button>Dowmload Resueme</button>
+        <!-- SOCIAL LINKS -->
+        <div class="social-buttons">
+            <a
+                href="https://github.com/Sakshamtech-bot"
+                target="_blank"
+                class="social-btn github-btn"
+            >
+                <span class="social-icon">◉</span>
+                GitHub
+            </a>
+            <a
+                href="https://www.linkedin.com/in/saksham-kumar-1a0926419"
+                target="_blank"
+                class="social-btn linkedin-btn"
+            >
+                <span class="linkedin-icon">in</span>
+                LinkedIn
+            </a>
+        </div>
+        <!-- RESUME -->
+        <a
+            href="saksham resume.pdf" download
+            class="resume-btn"
+        >
+            ↓ &nbsp; Download Resume
         </a>
+    </div>
 </section>
-<section id="about">
-    <h2>About me</h2>
-    <p>Hello! I m <b>Saksham Kumar</b>.a B-Tech CSE third year student.
-        I am into Java, Python, web Development, and Full Stack Development.
-         I really like programming, building websites, and learning new tech.
-         Right now, I'm working on real projects to get better at development.
-    </p>
-    </section>
-    <section id="skills">
-    <h2>My Skills</h2>
-
+<!-- ABOUT -->
+<section id="about" class="section">
+    <h2 class="section-title">
+        About Me
+    </h2>
+    <div class="about-card">
+        <p>
+            Hello! I'm <b>Saksham Kumar</b>, a B.Tech CSE
+            third-year student at RD Engineering College.
+        </p>
+        <p>
+            I am interested in Java, Python, Web Development,
+            and Full Stack Development.
+        </p>
+        <p>
+            I enjoy programming, building websites, and
+            learning new technologies. Currently, I'm working
+            on real-world projects to improve my development skills.
+        </p>
+    </div>
+</section>
+<!-- SKILLS -->
+<section id="skills" class="section">
+    <h2 class="section-title">
+        My Skills
+    </h2>
     <div class="skills-container">
-
         <div class="skill-card">
             <h3>Java</h3>
             <p>Core Java & Object-Oriented Programming</p>
         </div>
-
         <div class="skill-card">
             <h3>Python</h3>
             <p>Basic Programming & Problem Solving</p>
         </div>
-
         <div class="skill-card">
             <h3>C</h3>
             <p>Programming Fundamentals & Data Structures</p>
         </div>
-
         <div class="skill-card">
             <h3>HTML</h3>
             <p>Semantic HTML & Web Page Structure</p>
         </div>
-
         <div class="skill-card">
             <h3>CSS</h3>
             <p>Responsive Design & Modern Web Styling</p>
         </div>
-
         <div class="skill-card">
             <h3>JavaScript</h3>
             <p>DOM Manipulation & API Integration</p>
         </div>
-
         <div class="skill-card">
             <h3>Node.js</h3>
             <p>Backend Development & REST APIs</p>
         </div>
-
         <div class="skill-card">
             <h3>Express.js</h3>
             <p>Server-Side Routing & API Development</p>
         </div>
-
         <div class="skill-card">
             <h3>MySQL</h3>
             <p>Database Management & SQL Queries</p>
         </div>
     </div>
 </section>
-    <section id="projects">
+<!-- PROJECTS -->
+ <section id="projects">
     <h2>My Projects</h2>
     <div class="projects-container">
+        <!-- E-Commerce Website -->
         <div class="project-card">
-            <h3>Student Registration System</h3>
-            <p>A web-based registration system developed using HTML, CSS, JavaScript, and MySQL.</p>
+            <h3>E-Commerce Website</h3>
+            <p>
+                A responsive e-commerce website developed
+                using HTML, CSS, JavaScript, Node.js,
+                Express.js, and MySQL.
+            </p>
         </div>
+        <!-- Student Management System -->
+        <div class="project-card">
+            <h3>Student Management System</h3>
+            <p>
+                A web-based student management system
+                developed using HTML, CSS, JavaScript,
+                Node.js, Express.js, and MySQL.
+            </p>
+        </div>
+        <!-- Personal Portfolio Website -->
         <div class="project-card">
             <h3>Personal Portfolio Website</h3>
-            <p>A responsive portfolio website showcasing my skills, projects, certificates, and contact details.</p>
-        </div>
-        <div class="project-card">
-            <h3>Java Console Applications</h3>
-            <p>Developed Java programs demonstrating OOP, loops, recursion, and exception handling concepts.</p>
+            <p>
+                A responsive portfolio website showcasing
+                my skills, projects, certificates,
+                and contact details.
+            </p>
         </div>
     </div>
 </section>
-<section id="education">
-    <h2 class="education-title">Education</h2>
+<!-- EDUCATION -->
+<section id="education" class="section">
+    <h2 class="section-title">
+        Education
+    </h2>
     <div class="education-card">
         <h3>Bachelor of Technology (CSE)</h3>
         <p>RD Engineering College</p>
-        <p>Dr. A.P.J. Abdul Kalam Technical University (AKTU)</p>
+        <p>
+            Dr. A.P.J. Abdul Kalam Technical University (AKTU)
+        </p>
         <p>2024 - 2028</p>
     </div>
 </section>
-<section id="certificates">
-    <h2 class="certificate-title">Certificates</h2>
-
+<!-- CERTIFICATES -->
+<section id="certificates" class="section">
+    <h2 class="section-title">
+        Certificates
+    </h2>
     <div class="certificate-container">
-
         <div class="certificate-card">
             <h3>Java Programming for Beginners</h3>
-            <p>Completed from Simplilearn SkillUp</p>
-            <a href="Certificate/JavaCertificate.pdf" target="_blank">View Certificate</a>
+            <p>
+                Completed from Simplilearn SkillUp
+            </p>
+            <a
+                href="Certificate/JavaCertificate.pdf"
+                target="_blank"
+            >
+                View Certificate
+            </a>
         </div>
-
         <div class="certificate-card">
             <h3>Python Programming</h3>
-            <p>Completed from Simplilearn SkillUp</p>
-            <a href="Certificate/python Certificate.pdf" target="_blank">View Certificate</a>
+            <p>
+                Completed from Simplilearn SkillUp
+            </p>
+            <a
+                href="Certificate/python Certificate.pdf"
+                target="_blank"
+            >
+                View Certificate
+            </a>
         </div>
-
         <div class="certificate-card">
             <h3>Introduction to MySQL</h3>
-            <p>Completed from Simplilearn SkillUp</p>
-            <a href="Certificate/Introduction to SQL Certificate.pdf" target="_blank">View Certificate</a>
+            <p>
+                Completed from Simplilearn SkillUp
+            </p>
+            <a
+                href="Certificate/Introduction to SQL Certificate.pdf"
+                target="_blank"
+            >
+                View Certificate
+            </a>
         </div>
-
         <div class="certificate-card">
             <h3>Node JS</h3>
-            <p>Completed from Unstop</p>
-            <a href="Certificate/Node JS Certificate.pdf" target="_blank">View Certificate</a>
+            <p>
+                Completed from Unstop
+            </p>
+            <a
+                href="Certificate/Node JS Certificate.pdf"
+                target="_blank"
+            >
+                View Certificate
+            </a>
         </div>
-
     </div>
 </section>
-<section id="contact">
-    <h2 class="section-title">Contact Me</h2>
-
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <h2 class="section-title">
+        Contact Me
+    </h2>
     <div class="contact-card">
-
         <form id="contactForm">
-
             <div class="contact-row">
-
                 <div class="form-group">
                     <label>Name</label>
                     <input
@@ -169,7 +267,6 @@
                         required
                     >
                 </div>
-
                 <div class="form-group">
                     <label>Email</label>
                     <input
@@ -179,9 +276,7 @@
                         required
                     >
                 </div>
-
             </div>
-
             <div class="form-group message-group">
                 <label>Message</label>
                 <textarea
@@ -191,86 +286,93 @@
                     required
                 ></textarea>
             </div>
-
-            <button type="submit">Send Message</button>
-
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Send Message
+            </button>
         </form>
-
     </div>
 </section>
-<script src="script.js"></script>
+<!-- FOOTER -->
 <footer>
-    <p>@ 2026 saksham Kumar | All Right Reserved</p>
+    <p>
+        © 2026 Saksham Kumar | All Rights Reserved
+    </p>
 </footer>
-
+<!-- JAVASCRIPT -->
+<script src="script.js"></script>
 <script>
-    if(localStorage.getItem("isLoggedIn") !=="true")
-{
+/* ================= LOGIN CHECK ================= */
+if (localStorage.getItem("isLoggedIn") !== "true") {
     window.location.href = "login.html";
 }
-document.getElementById("logoutBtn").addEventListener("click", function () {
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("userEmil");
-    alert("Logout succesfully!");
-    window.location.href = "login.html";
-});
+/* LOGOUT */
+document.getElementById("logoutBtn")
+    .addEventListener("click", function () {
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("userEmail");
+        alert("Logout successfully!");
+        window.location.href = "login.html";
+    });
+/* USER DATA */
 const userEmail = localStorage.getItem("userEmail");
-
 if (userEmail) {
-
-    fetch(`http://localhost:3000/api/auth/me?email=${encodeURIComponent(userEmail)}`)
-        .then(response => response.json())
-        .then(user => {
-
-            document.getElementById("userName").textContent =
-                "Name: " + user.name;
-
-            document.getElementById("userEmail").textContent =
-                "Email: " + user.email;
-
-        })
-        .catch(error => {
-            console.log("User data error:", error);
-        });
+    fetch(
+        `http://localhost:3000/api/auth/me?email=${encodeURIComponent(userEmail)}`
+    )
+    .then(response => response.json())
+    .then(user => {
+        document.getElementById("userName").textContent = "Name: " + user.name;
+        document.getElementById("userEmail").textContent = "Email: " + user.email;
+    })
+    .catch(error => {
+        console.log(
+            "User data error:",
+            error
+        );
+    });
 }
-</script>
-<script>
-if(localStorage.getItem("isLoggedIn")!=="true")
-{
-    window.location.href = "login.html";
-}
-</script>
-<script>
-document.getElementById("contactForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    const data = {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message")
-    };
-    try {
-        const response = await fetch("http://localhost:3000/api/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        });
-        const result = await response.text();
-        if (response.ok) {
-            alert(result);
-            this.reset();
-        } else {
-            alert(result);
+/* CONTACT FORM */
+document.getElementById("contactForm")
+    .addEventListener("submit", async function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const data = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            message: formData.get("message")
+        };
+       try {
+            const response = await fetch(
+                "http://localhost:3000/api/contact",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                }
+            );
+            const result =
+                await response.text();
+            if (response.ok) {
+                alert(result);
+                this.reset();
+            } else {
+                alert(result);
+            }
+        } catch (error) {
+            console.error(
+                "Contact error:",
+                error
+            );
+            alert(
+                "Backend se connection nahi ho raha!"
+            );
         }
-    } catch (error) {
-        console.error("Contact error:", error);
-        alert("Backend se connection nahi ho raha!");
-    }
-});
+    });
 </script>
 </body>
 </html>
-
-
