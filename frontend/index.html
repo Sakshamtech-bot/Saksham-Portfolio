@@ -20,20 +20,9 @@
             <li><a href="#education">Education</a></li>
             <li><a href="#certificates">Certificate</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li>
-                <button id="logoutBtn" class="logout-btn">
-                    Logout
-                </button>
-            </li>
         </ul>
     </nav>
 </header>
-<!-- USER INFO -->
-<div id="userinfo">
-    <h2>Welcome</h2>
-    <p id="userName"></p>
-    <p id="userEmail"></p>
-</div>
 <!-- HERO SECTION -->
 <section id="introduce" class="hero">
     <div class="hero-content">
@@ -301,9 +290,6 @@
         © 2026 Saksham Kumar | All Rights Reserved
     </p>
 </footer>
-<!-- JAVASCRIPT -->
-<script src="script.js"></script>
-<script>
 /* ================= LOGIN CHECK ================= */
 if (localStorage.getItem("isLoggedIn") !== "true") {
     window.location.href = "login.html";
